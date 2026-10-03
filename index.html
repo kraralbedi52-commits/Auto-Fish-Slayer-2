@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Slayers 2 Fishing Bot</title>
 
   <style>
@@ -12,6 +11,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     html {
@@ -19,167 +19,133 @@
     }
 
     body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: #050505;
+      background: #080808;
       color: #fff;
-      line-height: 1.7;
+      line-height: 1.6;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================= */
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 999;
-      background: rgba(5, 5, 5, 0.95);
-      border-bottom: 1px solid #222;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.95);
+      border-bottom: 1px solid #2a0000;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       backdrop-filter: blur(10px);
     }
 
-    .nav-container {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
     .logo {
-      font-size: 22px;
+      color: #ff2020;
+      font-size: 24px;
       font-weight: bold;
-      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     }
 
-    .logo span {
-      color: #ff3333;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+    nav ul {
       list-style: none;
+      display: flex;
+      gap: 25px;
     }
 
-    .nav-links a {
-      color: #ddd;
+    nav a {
+      color: #fff;
+      text-decoration: none;
       transition: 0.3s;
+      font-weight: bold;
     }
 
-    .nav-links a:hover {
-      color: #ff3333;
+    nav a:hover {
+      color: #ff2020;
     }
 
     .lang-btn {
-      border: 1px solid #444;
-      background: #111;
+      background: #160000;
       color: #fff;
+      border: 1px solid #ff2020;
       padding: 8px 14px;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
-      font-size: 14px;
     }
 
     .lang-btn:hover {
-      background: #ff3333;
-      border-color: #ff3333;
+      background: #ff2020;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
+      justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 40px 20px;
       background:
-        radial-gradient(
-          circle at center,
-          #251010 0%,
-          #080808 45%,
-          #050505 100%
-        );
+        radial-gradient(circle at center, rgba(100, 0, 0, 0.25), transparent 45%),
+        #080808;
     }
 
     .hero-content {
-      width: 100%;
+      max-width: 800px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 90px);
-      font-weight: 900;
+      font-size: 58px;
+      color: #ff2020;
       margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #ff3333;
+      text-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
     }
 
     .hero p {
-      color: #bbb;
       font-size: 20px;
-      max-width: 750px;
-      margin: 0 auto 35px;
+      color: #ccc;
+      margin-bottom: 35px;
     }
 
-    /* =========================
-       BUTTONS
-    ========================= */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
       padding: 14px 28px;
       border-radius: 10px;
-      border: 1px solid #ff3333;
-      background: #ff3333;
-      color: white;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
       transition: 0.3s;
-      font-size: 16px;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      background: #cc2222;
-      border-color: #cc2222;
-      transform: translateY(-2px);
+    .download-btn {
+      background: #ff2020;
+      color: white;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
     }
 
-    .btn.secondary {
+    .download-btn:hover {
+      background: #d90000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    }
+
+    .features-btn {
+      border: 1px solid #ff2020;
+      color: #fff;
       background: transparent;
-      border-color: #444;
-      margin-right: 10px;
     }
 
-    .btn.secondary:hover {
-      border-color: #ff3333;
-      background: #111;
+    .features-btn:hover {
+      background: #ff2020;
+      transform: translateY(-3px);
     }
-
-    /* =========================
-       SECTIONS
-    ========================= */
 
     section {
-      padding: 90px 0;
+      padding: 90px 8%;
     }
 
     .section-title {
@@ -189,46 +155,42 @@
 
     .section-title h2 {
       font-size: 38px;
-      margin-bottom: 12px;
+      color: #ff2020;
+      margin-bottom: 10px;
     }
 
     .section-title p {
-      color: #999;
+      color: #aaa;
     }
-
-    /* =========================
-       FEATURES
-    ========================= */
 
     .features {
-      background: #080808;
-    }
-
-    .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 25px;
     }
 
     .card {
       background: #101010;
-      border: 1px solid #222;
-      border-radius: 14px;
+      border: 1px solid #260000;
+      border-radius: 15px;
       padding: 30px;
+      text-align: center;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #ff3333;
+      transform: translateY(-8px);
+      border-color: #ff2020;
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.12);
     }
 
-    .card-icon {
-      font-size: 40px;
+    .card .icon {
+      font-size: 42px;
       margin-bottom: 15px;
     }
 
     .card h3 {
+      color: #fff;
       margin-bottom: 10px;
       font-size: 22px;
     }
@@ -237,31 +199,28 @@
       color: #aaa;
     }
 
-    /* =========================
-       DOWNLOAD
-    ========================= */
-
     .download-section {
       text-align: center;
-      background:
-        radial-gradient(
-          circle at center,
-          #1a0808 0%,
-          #050505 65%
-        );
+      background: linear-gradient(
+        180deg,
+        #080808 0%,
+        #120000 50%,
+        #080808 100%
+      );
     }
 
     .download-box {
-      max-width: 750px;
+      max-width: 700px;
       margin: auto;
-      background: #0d0d0d;
-      border: 1px solid #2a2a2a;
+      background: #101010;
+      border: 1px solid #350000;
       border-radius: 18px;
       padding: 45px 30px;
     }
 
     .download-box h2 {
-      font-size: 36px;
+      color: #ff2020;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
@@ -270,80 +229,68 @@
       margin-bottom: 25px;
     }
 
-    .download-btn {
-      font-size: 18px;
-      min-width: 220px;
+    .file-info {
+      margin-bottom: 25px;
+      color: #ddd;
     }
-
-    .download-info {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #777;
-    }
-
-    /* =========================
-       HOW TO USE
-    ========================= */
 
     .steps {
+      max-width: 850px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .step {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 20px;
       background: #101010;
-      border: 1px solid #222;
-      padding: 30px 20px;
-      border-radius: 14px;
+      border: 1px solid #260000;
+      border-radius: 12px;
+      padding: 20px;
     }
 
     .step-number {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
+      min-width: 45px;
+      height: 45px;
       border-radius: 50%;
-      background: #ff3333;
+      background: #ff2020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: bold;
       font-size: 20px;
     }
 
     .step h3 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     .step p {
       color: #aaa;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
-      border-top: 1px solid #222;
-      padding: 30px 0;
       text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #260000;
       color: #777;
       background: #050505;
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
+    footer span {
+      color: #ff2020;
+    }
 
     .fade-in {
-      animation: fadeIn 0.8s ease;
+      animation: fadeIn 1s ease;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px);
       }
 
       to {
@@ -352,43 +299,47 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .nav-container {
-        flex-direction: column;
-        padding: 15px 0;
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .nav-links {
-        gap: 14px;
+      .hero h1 {
+        font-size: 45px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 15px 5%;
         flex-wrap: wrap;
-        justify-content: center;
+        gap: 15px;
       }
 
-      .feature-grid,
-      .steps {
+      nav ul {
+        gap: 12px;
+        font-size: 14px;
+        flex-wrap: wrap;
+      }
+
+      .features {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: 75vh;
+      section {
+        padding: 65px 5%;
+      }
+
+      .hero h1 {
+        font-size: 38px;
       }
 
       .hero p {
         font-size: 17px;
       }
 
-      .btn.secondary {
-        margin-right: 0;
-        margin-top: 10px;
-      }
-
-      .download-box h2 {
-        font-size: 28px;
+      .section-title h2 {
+        font-size: 30px;
       }
     }
   </style>
@@ -396,388 +347,268 @@
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
-
+  <!-- Navigation -->
   <nav>
+    <div class="logo">Slayers 2</div>
 
-    <div class="container nav-container">
+    <ul>
+      <li>
+        <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      </li>
 
-      <div class="logo">
-        Slayers <span>2</span>
-      </div>
+      <li>
+        <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
+      </li>
 
-      <ul class="nav-links">
+      <li>
+        <a href="#download" data-ar="التحميل" data-en="Download">التحميل</a>
+      </li>
 
-        <li>
-          <a
-            href="#home"
-            data-ar="الرئيسية"
-            data-en="Home"
-          >
-            الرئيسية
-          </a>
-        </li>
+      <li>
+        <a href="#how-to" data-ar="طريقة الاستخدام" data-en="How To Use">
+          طريقة الاستخدام
+        </a>
+      </li>
+    </ul>
 
-        <li>
-          <a
-            href="#features"
-            data-ar="المميزات"
-            data-en="Features"
-          >
-            المميزات
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="#download"
-            data-ar="التحميل"
-            data-en="Download"
-          >
-            التحميل
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="#how-to-use"
-            data-ar="طريقة الاستخدام"
-            data-en="How to Use"
-          >
-            طريقة الاستخدام
-          </a>
-        </li>
-
-      </ul>
-
-      <button
-        class="lang-btn"
-        id="languageBtn"
-        type="button"
-      >
-        English
-      </button>
-
-    </div>
-
+    <button class="lang-btn" id="langBtn">EN</button>
   </nav>
 
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content fade-in">
 
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section
-    class="hero fade-in"
-    id="home"
-  >
-
-    <div class="container hero-content">
-
-      <h1>
-        Slayers <span>2</span>
-        <br>
-        Fishing Bot
-      </h1>
+      <h1>Slayers 2 Fishing Bot</h1>
 
       <p
         data-ar="أداة صيد تلقائية تساعدك على أتمتة عملية الصيد في Slayers 2."
-        data-en="An automated fishing tool designed to automate the fishing process in Slayers 2."
+        data-en="An automatic fishing tool that helps you automate fishing in Slayers 2."
       >
         أداة صيد تلقائية تساعدك على أتمتة عملية الصيد في Slayers 2.
       </p>
 
-      <a
-        href="#download"
-        class="btn"
-        data-ar="📥 تحميل الآن"
-        data-en="📥 Download Now"
-      >
-        📥 تحميل الآن
-      </a>
-
-      <a
-        href="#features"
-        class="btn secondary"
-        data-ar="⚡ المميزات"
-        data-en="⚡ Features"
-      >
-        ⚡ المميزات
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FEATURES
-  ========================= -->
-
-  <section
-    class="features"
-    id="features"
-  >
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-ar="المميزات"
-          data-en="Features"
-        >
-          المميزات
-        </h2>
-
-        <p
-          data-ar="كل ما تحتاجه في أداة واحدة."
-          data-en="Everything you need in one tool."
-        >
-          كل ما تحتاجه في أداة واحدة.
-        </p>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-        <div class="card">
-
-          <div class="card-icon">
-            🎣
-          </div>
-
-          <h3
-            data-ar="صيد تلقائي"
-            data-en="Auto Fishing"
-          >
-            صيد تلقائي
-          </h3>
-
-          <p
-            data-ar="أتمتة عملية الصيد بدون الحاجة للتدخل المستمر."
-            data-en="Automates the fishing process without constant manual interaction."
-          >
-            أتمتة عملية الصيد بدون الحاجة للتدخل المستمر.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            ⚡
-          </div>
-
-          <h3
-            data-ar="سريع وسهل"
-            data-en="Fast & Easy"
-          >
-            سريع وسهل
-          </h3>
-
-          <p
-            data-ar="واجهة بسيطة وسهلة الاستخدام."
-            data-en="A simple and easy-to-use interface."
-          >
-            واجهة بسيطة وسهلة الاستخدام.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            🖥️
-          </div>
-
-          <h3
-            data-ar="واجهة بسيطة"
-            data-en="Simple Interface"
-          >
-            واجهة بسيطة
-          </h3>
-
-          <p
-            data-ar="تصميم واضح يساعدك على تشغيل الأداة بسهولة."
-            data-en="A clean interface that makes the tool easy to use."
-          >
-            تصميم واضح يساعدك على تشغيل الأداة بسهولة.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            🔧
-          </div>
-
-          <h3
-            data-ar="إعدادات قابلة للتخصيص"
-            data-en="Custom Settings"
-          >
-            إعدادات قابلة للتخصيص
-          </h3>
-
-          <p
-            data-ar="إمكانية تعديل الإعدادات بما يناسب استخدامك."
-            data-en="Adjust settings to fit your preferred setup."
-          >
-            إمكانية تعديل الإعدادات بما يناسب استخدامك.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            💻
-          </div>
-
-          <h3
-            data-ar="دعم Windows"
-            data-en="Windows Support"
-          >
-            دعم Windows
-          </h3>
-
-          <p
-            data-ar="مصمم للعمل على أجهزة Windows."
-            data-en="Designed to work on Windows computers."
-          >
-            مصمم للعمل على أجهزة Windows.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            📦
-          </div>
-
-          <h3
-            data-ar="تحميل مجاني"
-            data-en="Free Download"
-          >
-            تحميل مجاني
-          </h3>
-
-          <p
-            data-ar="يمكنك تحميل الملف من GitHub."
-            data-en="Download the project directly from GitHub."
-          >
-            يمكنك تحميل الملف من GitHub.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       DOWNLOAD
-  ========================= -->
-
-  <section
-    class="download-section fade-in"
-    id="download"
-  >
-
-    <div class="container">
-
-      <div class="download-box">
-
-        <h2
-          data-ar="تحميل Slayers 2 Fishing Bot"
-          data-en="Download Slayers 2 Fishing Bot"
-        >
-          تحميل Slayers 2 Fishing Bot
-        </h2>
-
-        <p
-          data-ar="اضغط على الزر لتحميل نسخة المشروع."
-          data-en="Click the button below to download the project release."
-        >
-          اضغط على الزر لتحميل نسخة المشروع.
-        </p>
-
-
-        <!-- =========================
-             DIRECT GITHUB DOWNLOAD
-        ========================= -->
+      <div class="buttons">
 
         <a
-          href="https://github.com/kraralbedi52-commits/Auto-Fish-Slayer-2/archive/refs/tags/v1.0.0.zip"
+          href="#download"
           class="btn download-btn"
+          data-ar="📥 تحميل الآن"
+          data-en="📥 Download Now"
         >
-          📥 تحميل مجاني
+          📥 تحميل الآن
         </a>
 
-
-        <div
-          class="download-info"
-          data-ar="سيتم تحميل نسخة v1.0.0 من GitHub."
-          data-en="Version v1.0.0 will be downloaded from GitHub."
+        <a
+          href="#features"
+          class="btn features-btn"
+          data-ar="⚡ المميزات"
+          data-en="⚡ Features"
         >
-          سيتم تحميل نسخة v1.0.0 من GitHub.
-        </div>
+          ⚡ المميزات
+        </a>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="section-title">
+      <h2
+        data-ar="المميزات"
+        data-en="Features"
+      >
+        المميزات
+      </h2>
+
+      <p
+        data-ar="كل ما تحتاجه لتجربة صيد أسهل."
+        data-en="Everything you need for an easier fishing experience."
+      >
+        كل ما تحتاجه لتجربة صيد أسهل.
+      </p>
+    </div>
+
+    <div class="features">
+
+      <div class="card">
+        <div class="icon">🎣</div>
+
+        <h3
+          data-ar="صيد تلقائي"
+          data-en="Auto Fishing"
+        >
+          صيد تلقائي
+        </h3>
+
+        <p
+          data-ar="يقوم البوت بأتمتة عملية الصيد لتوفير الوقت والجهد."
+          data-en="Automates the fishing process to save time and effort."
+        >
+          يقوم البوت بأتمتة عملية الصيد لتوفير الوقت والجهد.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+
+        <h3
+          data-ar="سريع وسهل"
+          data-en="Fast & Easy"
+        >
+          سريع وسهل
+        </h3>
+
+        <p
+          data-ar="تشغيل بسيط وسريع بدون خطوات معقدة."
+          data-en="Simple and fast setup without complicated steps."
+        >
+          تشغيل بسيط وسريع بدون خطوات معقدة.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🖥️</div>
+
+        <h3
+          data-ar="واجهة بسيطة"
+          data-en="Simple Interface"
+        >
+          واجهة بسيطة
+        </h3>
+
+        <p
+          data-ar="واجهة واضحة وسهلة الاستخدام."
+          data-en="A clean and easy-to-use interface."
+        >
+          واجهة واضحة وسهلة الاستخدام.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+
+        <h3
+          data-ar="إعدادات مخصصة"
+          data-en="Custom Settings"
+        >
+          إعدادات مخصصة
+        </h3>
+
+        <p
+          data-ar="تحكم في الإعدادات بما يناسب طريقة استخدامك."
+          data-en="Adjust settings to fit your preferred usage."
+        >
+          تحكم في الإعدادات بما يناسب طريقة استخدامك.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🪟</div>
+
+        <h3
+          data-ar="دعم Windows"
+          data-en="Windows Support"
+        >
+          دعم Windows
+        </h3>
+
+        <p
+          data-ar="مصمم للعمل على أجهزة Windows."
+          data-en="Designed to run on Windows devices."
+        >
+          مصمم للعمل على أجهزة Windows.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💸</div>
+
+        <h3
+          data-ar="مجاني"
+          data-en="Free"
+        >
+          مجاني
+        </h3>
+
+        <p
+          data-ar="يمكنك تحميل البوت واستخدامه مجاناً."
+          data-en="Download and use the bot for free."
+        >
+          يمكنك تحميل البوت واستخدامه مجاناً.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section class="download-section fade-in" id="download">
+
+    <div class="download-box">
+
+      <h2
+        data-ar="تحميل Slayers 2 Fishing Bot"
+        data-en="Download Slayers 2 Fishing Bot"
+      >
+        تحميل Slayers 2 Fishing Bot
+      </h2>
+
+      <p
+        data-ar="حمّل الملف من الإصدار الرسمي."
+        data-en="Download the file from the official release."
+      >
+        حمّل الملف من الإصدار الرسمي.
+      </p>
+
+      <div
+        class="file-info"
+        data-ar="📦 ملف ZIP — تأكد من فك الضغط قبل الاستخدام."
+        data-en="📦 ZIP file — Make sure to extract it before using."
+      >
+        📦 ملف ZIP — تأكد من فك الضغط قبل الاستخدام.
+      </div>
+
+      <!-- زر التحميل -->
+      <a
+        href="https://github.com/kraralbedi52-commits/Auto-Fish-Slayer-2/releases/download/v1.0.0/Slayer2Fishing.zip"
+        class="btn download-btn"
+      >
+        📥 تحميل مجاني
+      </a>
 
     </div>
 
   </section>
 
+  <!-- How To Use -->
+  <section id="how-to">
 
-  <!-- =========================
-       HOW TO USE
-  ========================= -->
+    <div class="section-title">
 
-  <section id="how-to-use">
+      <h2
+        data-ar="طريقة الاستخدام"
+        data-en="How To Use"
+      >
+        طريقة الاستخدام
+      </h2>
 
-    <div class="container">
+      <p
+        data-ar="ثلاث خطوات بسيطة للبدء."
+        data-en="Three simple steps to get started."
+      >
+        ثلاث خطوات بسيطة للبدء.
+      </p>
 
-      <div class="section-title">
+    </div>
 
-        <h2
-          data-ar="طريقة الاستخدام"
-          data-en="How to Use"
-        >
-          طريقة الاستخدام
-        </h2>
+    <div class="steps">
 
-        <p
-          data-ar="اتبع الخطوات التالية."
-          data-en="Follow these steps."
-        >
-          اتبع الخطوات التالية.
-        </p>
+      <div class="step">
 
-      </div>
+        <div class="step-number">1</div>
 
-
-      <div class="steps">
-
-        <div class="step">
-
-          <div class="step-number">
-            1
-          </div>
-
+        <div>
           <h3
             data-ar="تحميل الملف"
             data-en="Download"
@@ -786,21 +617,20 @@
           </h3>
 
           <p
-            data-ar="اضغط على زر التحميل."
-            data-en="Click the download button."
+            data-ar="اضغط على زر التحميل لتنزيل ملف البوت."
+            data-en="Click the download button to download the bot."
           >
-            اضغط على زر التحميل.
+            اضغط على زر التحميل لتنزيل ملف البوت.
           </p>
-
         </div>
 
+      </div>
 
-        <div class="step">
+      <div class="step">
 
-          <div class="step-number">
-            2
-          </div>
+        <div class="step-number">2</div>
 
+        <div>
           <h3
             data-ar="فك الضغط"
             data-en="Extract"
@@ -809,35 +639,33 @@
           </h3>
 
           <p
-            data-ar="قم بفك ضغط ملف ZIP بعد تحميله."
-            data-en="Extract the ZIP file after downloading it."
+            data-ar="فك ضغط ملف ZIP في المكان الذي تريده."
+            data-en="Extract the ZIP file wherever you want."
           >
-            قم بفك ضغط ملف ZIP بعد تحميله.
+            فك ضغط ملف ZIP في المكان الذي تريده.
           </p>
-
         </div>
 
+      </div>
 
-        <div class="step">
+      <div class="step">
 
-          <div class="step-number">
-            3
-          </div>
+        <div class="step-number">3</div>
 
+        <div>
           <h3
-            data-ar="تشغيل الأداة"
+            data-ar="تشغيل البوت"
             data-en="Run"
           >
-            تشغيل الأداة
+            تشغيل البوت
           </h3>
 
           <p
-            data-ar="شغل الملفات واتبع التعليمات الموجودة معها."
-            data-en="Run the files and follow the included instructions."
+            data-ar="افتح ملفات البوت واتبع التعليمات الموجودة داخله."
+            data-en="Open the bot files and follow the instructions inside."
           >
-            شغل الملفات واتبع التعليمات الموجودة معها.
+            افتح ملفات البوت واتبع التعليمات الموجودة داخله.
           </p>
-
         </div>
 
       </div>
@@ -846,106 +674,51 @@
 
   </section>
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- Footer -->
   <footer>
 
-    <div class="container">
-
-      <p>
-        © 2026 Slayers 2 Fishing Bot
-      </p>
-
-    </div>
+    <p>
+      © 2026
+      <span>Slayers 2 Fishing Bot</span>
+      —
+      <span
+        data-ar="جميع الحقوق محفوظة"
+        data-en="All rights reserved"
+      >
+        جميع الحقوق محفوظة
+      </span>
+    </p>
 
   </footer>
 
-
-  <!-- =========================
-       LANGUAGE SCRIPT
-  ========================= -->
-
   <script>
+    const langBtn = document.getElementById("langBtn");
 
-    let currentLanguage = "ar";
+    let currentLang = "ar";
 
-    const languageBtn =
-      document.getElementById("languageBtn");
+    langBtn.addEventListener("click", () => {
 
+      currentLang = currentLang === "ar" ? "en" : "ar";
 
-    function updateLanguage() {
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-      const elements =
-        document.querySelectorAll(
-          "[data-ar][data-en]"
-        );
+      document.querySelectorAll("[data-ar]").forEach((element) => {
 
-
-      elements.forEach(function(element) {
-
-        if (currentLanguage === "ar") {
-
-          element.textContent =
-            element.getAttribute("data-ar");
-
-        } else {
-
-          element.textContent =
-            element.getAttribute("data-en");
-
-        }
+        element.textContent =
+          currentLang === "ar"
+            ? element.getAttribute("data-ar")
+            : element.getAttribute("data-en");
 
       });
 
+      langBtn.textContent = currentLang === "ar" ? "EN" : "AR";
 
-      document.documentElement.lang =
-        currentLanguage;
-
-
-      if (currentLanguage === "ar") {
-
-        document.documentElement.dir = "rtl";
-
-        languageBtn.textContent = "English";
-
-      } else {
-
-        document.documentElement.dir = "ltr";
-
-        languageBtn.textContent = "العربية";
-
-      }
-
-    }
-
-
-    languageBtn.addEventListener(
-      "click",
-      function() {
-
-        if (currentLanguage === "ar") {
-
-          currentLanguage = "en";
-
-        } else {
-
-          currentLanguage = "ar";
-
-        }
-
-        updateLanguage();
-
-      }
-    );
-
-
-    updateLanguage();
-
+    });
   </script>
 
 </body>
 </html>
 ```
+
+تم تعديل **زر التحميل فقط** ليشير إلى ملف الـ Release نفسه، لذلك المفروض الآن ينزل `Slayer2Fishing.zip` بدل أرشيف المشروع كامل.
