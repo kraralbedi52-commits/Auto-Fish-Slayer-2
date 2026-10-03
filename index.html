@@ -36,7 +36,10 @@
       margin: auto;
     }
 
-    /* Navbar */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     nav {
       position: sticky;
       top: 0;
@@ -88,6 +91,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 14px;
     }
 
     .lang-btn:hover {
@@ -95,14 +99,22 @@
       border-color: #ff3333;
     }
 
-    /* Hero */
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       min-height: 85vh;
       display: flex;
       align-items: center;
       text-align: center;
       background:
-        radial-gradient(circle at center, #251010 0%, #080808 45%, #050505 100%);
+        radial-gradient(
+          circle at center,
+          #251010 0%,
+          #080808 45%,
+          #050505 100%
+        );
     }
 
     .hero-content {
@@ -126,6 +138,10 @@
       margin: 0 auto 35px;
     }
 
+    /* =========================
+       BUTTONS
+    ========================= */
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -138,6 +154,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 16px;
     }
 
     .btn:hover {
@@ -157,7 +174,10 @@
       background: #111;
     }
 
-    /* Sections */
+    /* =========================
+       SECTIONS
+    ========================= */
+
     section {
       padding: 90px 0;
     }
@@ -176,7 +196,10 @@
       color: #999;
     }
 
-    /* Features */
+    /* =========================
+       FEATURES
+    ========================= */
+
     .features {
       background: #080808;
     }
@@ -214,11 +237,18 @@
       color: #aaa;
     }
 
-    /* Download */
+    /* =========================
+       DOWNLOAD
+    ========================= */
+
     .download-section {
       text-align: center;
       background:
-        radial-gradient(circle at center, #1a0808 0%, #050505 65%);
+        radial-gradient(
+          circle at center,
+          #1a0808 0%,
+          #050505 65%
+        );
     }
 
     .download-box {
@@ -251,7 +281,10 @@
       color: #777;
     }
 
-    /* Instructions */
+    /* =========================
+       HOW TO USE
+    ========================= */
+
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -287,7 +320,10 @@
       color: #aaa;
     }
 
-    /* Footer */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       border-top: 1px solid #222;
       padding: 30px 0;
@@ -296,7 +332,10 @@
       background: #050505;
     }
 
-    /* Fade */
+    /* =========================
+       ANIMATION
+    ========================= */
+
     .fade-in {
       animation: fadeIn 0.8s ease;
     }
@@ -313,8 +352,12 @@
       }
     }
 
-    /* Mobile */
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 800px) {
+
       .nav-container {
         flex-direction: column;
         padding: 15px 0;
@@ -343,14 +386,22 @@
         margin-right: 0;
         margin-top: 10px;
       }
+
+      .download-box h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
   <nav>
+
     <div class="container nav-container">
 
       <div class="logo">
@@ -358,35 +409,71 @@
       </div>
 
       <ul class="nav-links">
+
         <li>
-          <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+          <a
+            href="#home"
+            data-ar="الرئيسية"
+            data-en="Home"
+          >
+            الرئيسية
+          </a>
         </li>
 
         <li>
-          <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
+          <a
+            href="#features"
+            data-ar="المميزات"
+            data-en="Features"
+          >
+            المميزات
+          </a>
         </li>
 
         <li>
-          <a href="#download" data-ar="التحميل" data-en="Download">التحميل</a>
+          <a
+            href="#download"
+            data-ar="التحميل"
+            data-en="Download"
+          >
+            التحميل
+          </a>
         </li>
 
         <li>
-          <a href="#how-to-use" data-ar="طريقة الاستخدام" data-en="How to Use">
+          <a
+            href="#how-to-use"
+            data-ar="طريقة الاستخدام"
+            data-en="How to Use"
+          >
             طريقة الاستخدام
           </a>
         </li>
+
       </ul>
 
-      <button class="lang-btn" id="languageBtn">
+      <button
+        class="lang-btn"
+        id="languageBtn"
+        type="button"
+      >
         English
       </button>
 
     </div>
+
   </nav>
 
 
-  <!-- Hero -->
-  <section class="hero fade-in" id="home">
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section
+    class="hero fade-in"
+    id="home"
+  >
+
     <div class="container hero-content">
 
       <h1>
@@ -421,15 +508,23 @@
       </a>
 
     </div>
+
   </section>
 
 
-  <!-- Features -->
-  <section class="features" id="features">
+  <!-- =========================
+       FEATURES
+  ========================= -->
+
+  <section
+    class="features"
+    id="features"
+  >
 
     <div class="container">
 
       <div class="section-title">
+
         <h2
           data-ar="المميزات"
           data-en="Features"
@@ -443,13 +538,17 @@
         >
           كل ما تحتاجه في أداة واحدة.
         </p>
+
       </div>
 
 
       <div class="feature-grid">
 
         <div class="card">
-          <div class="card-icon">🎣</div>
+
+          <div class="card-icon">
+            🎣
+          </div>
 
           <h3
             data-ar="صيد تلقائي"
@@ -464,11 +563,15 @@
           >
             أتمتة عملية الصيد بدون الحاجة للتدخل المستمر.
           </p>
+
         </div>
 
 
         <div class="card">
-          <div class="card-icon">⚡</div>
+
+          <div class="card-icon">
+            ⚡
+          </div>
 
           <h3
             data-ar="سريع وسهل"
@@ -483,11 +586,15 @@
           >
             واجهة بسيطة وسهلة الاستخدام.
           </p>
+
         </div>
 
 
         <div class="card">
-          <div class="card-icon">🖥️</div>
+
+          <div class="card-icon">
+            🖥️
+          </div>
 
           <h3
             data-ar="واجهة بسيطة"
@@ -502,11 +609,15 @@
           >
             تصميم واضح يساعدك على تشغيل الأداة بسهولة.
           </p>
+
         </div>
 
 
         <div class="card">
-          <div class="card-icon">🔧</div>
+
+          <div class="card-icon">
+            🔧
+          </div>
 
           <h3
             data-ar="إعدادات قابلة للتخصيص"
@@ -521,11 +632,15 @@
           >
             إمكانية تعديل الإعدادات بما يناسب استخدامك.
           </p>
+
         </div>
 
 
         <div class="card">
-          <div class="card-icon">💻</div>
+
+          <div class="card-icon">
+            💻
+          </div>
 
           <h3
             data-ar="دعم Windows"
@@ -540,11 +655,15 @@
           >
             مصمم للعمل على أجهزة Windows.
           </p>
+
         </div>
 
 
         <div class="card">
-          <div class="card-icon">📦</div>
+
+          <div class="card-icon">
+            📦
+          </div>
 
           <h3
             data-ar="تحميل مجاني"
@@ -554,11 +673,12 @@
           </h3>
 
           <p
-            data-ar="يمكنك تحميل الملف من الموقع مباشرة."
-            data-en="Download the file directly from the website."
+            data-ar="يمكنك تحميل الملف من GitHub."
+            data-en="Download the project directly from GitHub."
           >
-            يمكنك تحميل الملف من الموقع مباشرة.
+            يمكنك تحميل الملف من GitHub.
           </p>
+
         </div>
 
       </div>
@@ -568,8 +688,14 @@
   </section>
 
 
-  <!-- Download -->
-  <section class="download-section fade-in" id="download">
+  <!-- =========================
+       DOWNLOAD
+  ========================= -->
+
+  <section
+    class="download-section fade-in"
+    id="download"
+  >
 
     <div class="container">
 
@@ -583,18 +709,20 @@
         </h2>
 
         <p
-          data-ar="اضغط على الزر لتحميل الملف."
-          data-en="Click the button below to download the file."
+          data-ar="اضغط على الزر لتحميل نسخة المشروع."
+          data-en="Click the button below to download the project release."
         >
-          اضغط على الزر لتحميل الملف.
+          اضغط على الزر لتحميل نسخة المشروع.
         </p>
 
 
-        <!-- DOWNLOAD BUTTON -->
+        <!-- =========================
+             DIRECT GITHUB DOWNLOAD
+        ========================= -->
+
         <a
-          href="Slayer2Fishing.zip"
+          href="https://github.com/kraralbedi52-commits/Auto-Fish-Slayer-2/archive/refs/tags/v1.0.0.zip"
           class="btn download-btn"
-          download="Slayer2Fishing.zip"
         >
           📥 تحميل مجاني
         </a>
@@ -602,10 +730,10 @@
 
         <div
           class="download-info"
-          data-ar="ملف ZIP — تأكد من فك الضغط قبل الاستخدام."
-          data-en="ZIP file — extract it before using."
+          data-ar="سيتم تحميل نسخة v1.0.0 من GitHub."
+          data-en="Version v1.0.0 will be downloaded from GitHub."
         >
-          ملف ZIP — تأكد من فك الضغط قبل الاستخدام.
+          سيتم تحميل نسخة v1.0.0 من GitHub.
         </div>
 
       </div>
@@ -615,7 +743,10 @@
   </section>
 
 
-  <!-- How To Use -->
+  <!-- =========================
+       HOW TO USE
+  ========================= -->
+
   <section id="how-to-use">
 
     <div class="container">
@@ -655,10 +786,10 @@
           </h3>
 
           <p
-            data-ar="اضغط على زر التحميل في الأعلى."
-            data-en="Click the download button above."
+            data-ar="اضغط على زر التحميل."
+            data-en="Click the download button."
           >
-            اضغط على زر التحميل في الأعلى.
+            اضغط على زر التحميل.
           </p>
 
         </div>
@@ -678,10 +809,10 @@
           </h3>
 
           <p
-            data-ar="قم بفك ضغط ملف ZIP في مجلد مناسب."
-            data-en="Extract the ZIP file into a suitable folder."
+            data-ar="قم بفك ضغط ملف ZIP بعد تحميله."
+            data-en="Extract the ZIP file after downloading it."
           >
-            قم بفك ضغط ملف ZIP في مجلد مناسب.
+            قم بفك ضغط ملف ZIP بعد تحميله.
           </p>
 
         </div>
@@ -701,10 +832,10 @@
           </h3>
 
           <p
-            data-ar="شغل الأداة واتبع التعليمات الموجودة معها."
-            data-en="Run the tool and follow the included instructions."
+            data-ar="شغل الملفات واتبع التعليمات الموجودة معها."
+            data-en="Run the files and follow the included instructions."
           >
-            شغل الأداة واتبع التعليمات الموجودة معها.
+            شغل الملفات واتبع التعليمات الموجودة معها.
           </p>
 
         </div>
@@ -716,7 +847,10 @@
   </section>
 
 
-  <!-- Footer -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
     <div class="container">
@@ -730,52 +864,82 @@
   </footer>
 
 
-  <!-- JavaScript -->
+  <!-- =========================
+       LANGUAGE SCRIPT
+  ========================= -->
+
   <script>
 
     let currentLanguage = "ar";
 
-    const languageBtn = document.getElementById("languageBtn");
+    const languageBtn =
+      document.getElementById("languageBtn");
+
 
     function updateLanguage() {
 
-      const elements = document.querySelectorAll("[data-ar][data-en]");
+      const elements =
+        document.querySelectorAll(
+          "[data-ar][data-en]"
+        );
+
 
       elements.forEach(function(element) {
 
         if (currentLanguage === "ar") {
-          element.textContent = element.getAttribute("data-ar");
+
+          element.textContent =
+            element.getAttribute("data-ar");
+
         } else {
-          element.textContent = element.getAttribute("data-en");
+
+          element.textContent =
+            element.getAttribute("data-en");
+
         }
 
       });
 
 
-      document.documentElement.lang = currentLanguage;
+      document.documentElement.lang =
+        currentLanguage;
+
 
       if (currentLanguage === "ar") {
+
         document.documentElement.dir = "rtl";
+
         languageBtn.textContent = "English";
+
       } else {
+
         document.documentElement.dir = "ltr";
+
         languageBtn.textContent = "العربية";
+
       }
 
     }
 
 
-    languageBtn.addEventListener("click", function() {
+    languageBtn.addEventListener(
+      "click",
+      function() {
 
-      if (currentLanguage === "ar") {
-        currentLanguage = "en";
-      } else {
-        currentLanguage = "ar";
+        if (currentLanguage === "ar") {
+
+          currentLanguage = "en";
+
+        } else {
+
+          currentLanguage = "ar";
+
+        }
+
+        updateLanguage();
+
       }
-
-      updateLanguage();
-
-    });
+    );
 
 
     updateLanguage();
